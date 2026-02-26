@@ -3,41 +3,58 @@ public class PalidromeCheckerApp{/**
  * MAIN CLASS – UseCase1PalindromeCheckerApp
  * ================================================================
  *
- * Use Case 1: Application Entry & Welcome Message
+ * Use Case 2: Hardcoded parlindrome validation
  *
  * Description:
- * This class represents the entry point of the
- * Palindrome Checker Management System.
+ * This class demonstrates basic palindrome validation
+ *using a hardcoded string value
  *
  * At this stage, the application:
- * - Starts execution from the main() method
- * - Displays a welcome message
- * - Shows application version
+ * - stores a predefined string
+ * - compares characters from both ends
+ * - determines whether the string is a palindrome
+ *  - Displays the result on the console
  *
- * No palindrome logic is implemented yet.
+ * This use case introduces fundamental comparison logic
+ * before using advance data stuctures
  *
- * The goal is to establish a clear startup flow.
  *
- * @author Developer
- * @version 1.0
+ *
+ * @author shweta
+ * @version 2.0
  */
-public class UseCase1PalindromeCheckerApp {
+
 
     /**
-     * Application entry point.
-     *
-     * This is the first method executed by the JVM
-     * when the program starts.
+     * Application entry point for UC2.
      *
      * @param args Command-line arguments
      */
     public static void main(String[] args) {
 
-        System.out.println("====================================");
-        System.out.println("   Palindrome Checker System v1.0  ");
-        System.out.println("====================================");
-        System.out.println("Welcome to the Palindrome Checker!");
-        System.out.println("Application started successfully.");
+        // Hardcoded string
+        String text = "madam";
+
+        boolean isPalindrome = true;
+
+        int left = 0;
+        int right = text.length() - 1;
+
+        // Compare characters from both ends
+        while (left < right) {
+            if (text.charAt(left) != text.charAt(right)) {
+                isPalindrome = false;
+                break;
+            }
+            left++;
+            right--;
+        }
+
+        // Display result
+        if (isPalindrome) {
+            System.out.println(text + " is a palindrome.");
+        } else {
+            System.out.println(text + " is not a palindrome.");
+        }
     }
-}
 }
